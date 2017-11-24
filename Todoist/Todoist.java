@@ -87,10 +87,26 @@ public class Todoist
         //boolean hayTareas = false;
         //if(getNumeroTarea() > 0)
         //{
-            //hayTareas = true;
+        //      hayTareas = true;
         //}
         //return hayTareas;
         return ( getNumeroTarea() > 0);
+    }
+
+    /** 
+     * Metodo que imprime todas las tareas existentes, una por linea.
+     * El metodo imprime el numero de posicion de la tarea antes del
+     * nombre de la tarea.
+     */
+    public void mostrarTareasNumeradas()
+    {
+        //bucle se hace tantas veces como tareas haya.
+        int numeroPosicion = 1;
+        for(String tarea : tareas)
+        {
+            System.out.println(numeroPosicion + "." + tarea);
+            numeroPosicion = numeroPosicion +1;
+        }
     }
 
 }
