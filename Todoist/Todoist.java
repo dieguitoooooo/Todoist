@@ -53,13 +53,44 @@ public class Todoist
     public boolean eliminarTarea(int posicionTarea)
     {
         boolean  valorADevolver = false;
-        if(posicionTarea >= 0 && posicionTarea < tareas.size())
+        if(esValidoElIndice(posicionTarea))
         {
             tareas.remove(posicionTarea);
             valorADevolver = false;
         }
-        
+
         return valorADevolver;
     }
-    
+
+    /**
+     * Metodo que comprueba si una posicion es valida y devuelve true
+     * en caso afirmativo o false en otro caso.
+     */
+
+    public boolean esValidoElIndice(int indice)
+    {
+        //boolean valorADevolver = false;
+        //if(indice >= 0 && indice < tareas.size())
+        //{
+        //    valorADevolver = true;
+        //}
+        //return valorADevolver;
+        return ( indice >= 0 && indice <tareas.size());
+    }
+
+    /**
+     * Metodo que devuelve true en caso de que haya tareas por hacer, false
+     * en otro caso
+     */    
+    public boolean hayTareasPendientes()
+    {
+        //boolean hayTareas = false;
+        //if(getNumeroTarea() > 0)
+        //{
+            //hayTareas = true;
+        //}
+        //return hayTareas;
+        return ( getNumeroTarea() > 0);
+    }
+
 }
